@@ -1,0 +1,15 @@
+body{
+	background-color: lemonchiffon;
+}
+
+ul{
+	list-style-type: none;
+}
+
+li{
+	display: inline-block;
+}
+
+a{
+	text-decoration: none;
+}
