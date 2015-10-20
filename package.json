@@ -1,0 +1,15 @@
+{
+  "name": "D3-Demo",
+  "version": "0.0.0",
+  "description": "Collaboritive project to teach the RefactorU Fall 2015 cohort about the D3 Library.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paula,Joannie,Josh,Eduard,Danielle",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.13.3",
+    "body-parser": "~1.14.1"
+  }
+}
