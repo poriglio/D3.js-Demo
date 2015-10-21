@@ -1,18 +1,33 @@
+// var colorPicker = function(number){
+//       // scale of 4 - 2010
+//       if(number>400){
+//             return "hsl(24,39%,12%)"
+//       }
+//       else{
+//             var lightness = (-0.2)*number+62
+//             return "hsl(24,39%," + lightness + "%)"
+//       }
+//       // var lightness = (27/1003)*number+8
+// }
+
 var colorPicker = function(number){
       if(number<20){
-            return "#A67D56"
+            return "hsl(24,39%,85%)"
       }
       else if(number<50){
-            return "#905D2C"
+            return "hsl(24,39%,70%)"
       }
-      else if(number<125){
-            return "#65411F"
+      else if(number<150){
+            return "hsl(24,39%,55%)"
+      }
+      else if(number<250){
+            return "hsl(24,39%,32%)"
       }
       else if(number<400){
-            return "#482E16"
+            return "hsl(24,39%,18%)"
       }
       else{
-            return "#2B1C0D"
+            return "hsl(24,39%,10%)"
       }
 }
 

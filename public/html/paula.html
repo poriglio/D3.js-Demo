@@ -4,33 +4,57 @@
 		<meta charset="utf-8">
 		<title>D3.js Demo</title>
 		<link href="/styles/styles.css" rel="stylesheet">
+		<link href="/styles/paula.css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js"></script>
+		<script src="/js/angular-route.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
 		<script src="/js/datamaps.usa.js"></script>
 		<script src="/js/starbucks.js"></script>
 	</head>
-	<body>	
+	<body>
+		<div class="container">
 
 <!-- THE BELOW NG-VIEW WILL SHOW THE HEADING AND THE NAV BAR!!! -->
 
-		<div ng-view>
+			<div ng-view>
+			</div>
+
+			<h1>Chloropleth</h1>
+			<h2>Number of Starbucks Locations by State</h2>
+
+
+			<div id="container" style="position: relative; width: 800px; height: 500px;"></div>
+
+			<table>
+				<tr>
+					<td><div class="key key6"></div></td>
+					<td>Over 400 stores</td>
+					<td><div class="key key3"></div></td>
+					<td>50 - 150 stores</td>
+				</tr>
+				<tr>
+					<td><div class="key key5"></div></td>
+					<td>250 - 400 stores</td>
+					<td><div class="key key2"></div></td>
+					<td>20 - 50 stores</td>
+				</tr>
+				<tr>
+					<td><div class="key key4"></div></td>
+					<td>150 - 250 stores</td>
+					<td><div class="key key1"></div></td>
+					<td>Fewer than 20 stores</td>
+				</tr>		
+			</table>
+
+			<ul>
+				<h3>Resources</h3>
+				<li><a href="http://datamaps.github.io/">Data Maps:</a> Customizable SVG map visualizations for the web in a single Javascript file using D3.js</li>
+				<li><a href="http://www.statemaster.com/graph/lif_sta_sto-lifestyle-starbucks-stores">Starbucks Data:</a> States ranked by number of Starbucks stores</li>
+			</ul>
 		</div>
-
-		<h1>Chloropleth</h1>
-		<h2>Number of Starbucks Locations by State</h2>
-
-
-		<div id="container" style="position: relative; width: 800px; height: 500px;"></div>
-
-		<ul>
-			<h3>Resources</h3>
-			<li><a href="http://datamaps.github.io/">Data Maps:</a> Customizable SVG map visualizations for the web in a single Javascript file using D3.js</li>
-			<li><a href="http://www.statemaster.com/graph/lif_sta_sto-lifestyle-starbucks-stores">Starbucks Data:</a> States ranked by number of Starbucks stores</li>
-		</ul>
-		Why won't this damn thing push properly?
-		<script src="/js/angular-route.js"></script>
 		<script src="/js/paula.js"></script>
 	</body>
 </html>

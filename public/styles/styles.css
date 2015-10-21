@@ -1,15 +1,34 @@
-body{
-	background-color: lemonchiffon;
+html{
+	font-size: 16px;
+	line-height: 1.5rem;
 }
 
-ul{
+body{
+	background-color: rgb(236,235,255);
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Lato', sans-serif;
+}
+
+.heading{
+	padding: 1rem;
+}
+
+.container{
+	margin: auto;
+	max-width: 900px;
+	text-align: center;
+}
+
+.navbar-list{
 	list-style-type: none;
 }
 
-li{
+.navbar-list li{
 	display: inline-block;
+	padding: 5px;
 }
 
-a{
+.navbar-list a{
 	text-decoration: none;
 }
