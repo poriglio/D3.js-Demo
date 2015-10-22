@@ -31,11 +31,12 @@ var yAxis = d3.svg.axis()
     .tickFormat(d3.format(".2s"));
 
 var svg = d3.select("body").append("svg")     //adding the scalable vector graphic by selecting 'body' and adding and "svg " attribute class
-    .attr("width", width + margin.left + margin.right)   
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", width + margin.left + margin.right)   //setting the attribute class of "width" and specifying its value parameters
+    .attr("height", height + margin.top + margin.bottom) 
   .append("g")     //adding the 'g' element, which is essentially the glue that groups svg elements together
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")"); //The SVG Transform Attribute applies a list of transformations to an element and it's children , and then translate to the page
 
+ 
 d3.csv("./js/joshData.csv", function(error, data) { //pulling in the csv data
   if (error) throw error;
 
@@ -49,10 +50,10 @@ d3.csv("./js/joshData.csv", function(error, data) { //pulling in the csv data
   x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
   y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]); //setting the domain to be the maximum value of the age data
 
-  svg.append("g")
+  svg.append("g")   //appending another "g" element and giving it attributes "
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")      
-      .call(xAxis);    //appending another "g element and giving it attributes "
+      .call(xAxis);    
 
   svg.append("g")
       .attr("class", "y axis")
@@ -78,6 +79,7 @@ d3.csv("./js/joshData.csv", function(error, data) { //pulling in the csv data
       .attr("y", function(d) { return y(d.value); })
       .attr("height", function(d) { return height - y(d.value); })
       .style("fill", function(d) { return color(d.name); });
+
 
   var legend = svg.selectAll(".legend")
       .data(ageNames.slice().reverse())
