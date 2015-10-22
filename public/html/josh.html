@@ -1,21 +1,40 @@
-<DOCTYPE html>
-<html ng-app="demoApp">
-	<head>
-		<meta charset="utf-8">
-		<title>D3.js Demo</title>
-		<link href="/styles/styles.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js"></script>
-	</head>
-	<body>	test change
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href="/styles/styles.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
-<!-- THE BELOW NG-VIEW WILL SHOW THE HEADING AND THE NAV BAR!!! -->
+<style>
 
-		<div ng-view>
-		</div>
+body {
+  font: 10px;
+  font-family: "Lato", sans-serif;
+}
+ .head{ 
+  text-align: center;}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
 
-		<h2>Josh's Chart</h2>
+.bar {
+  fill: steelblue;
+}
 
-		<script src="/js/angular-route.js"></script>
-	</body>
-</html>
+.x.axis path {
+  display: block;
+}
+
+</style>
+<body>
+
+
+  <h1 class = 'head'> Population Data based on State</h1>
+
+
+   <script src = "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+
+	<script src='/js/josh.js'></script>
+			</body>
+	</html>
