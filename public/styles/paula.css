@@ -1,0 +1,51 @@
+table{
+	display: inline-block;
+}
+
+tr{
+	line-height: 100%;
+}
+
+td{
+	vertical-align: middle;
+}
+
+.key{
+	margin: 5px;
+	height: 30px;
+	width: 60px;
+	display: inline-block;
+}
+
+.key1{
+	background-color: hsl(24,39%,85%);
+}
+
+.key2{
+	background-color: hsl(24,39%,70%);
+}
+
+.key3{
+	background-color: hsl(24,39%,55%);
+}
+
+.key4{
+	background-color: hsl(24,39%,32%);
+}
+
+.key5{
+	background-color: hsl(24,39%,18%);
+}
+
+.key6{
+	background-color: hsl(24,39%,10%);
+}
+
+ul{
+	list-style-type: none;
+	text-align: left;
+}
+
+a{
+	text-decoration: none;
+}
