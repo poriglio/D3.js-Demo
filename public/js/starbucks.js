@@ -1,15 +1,3 @@
-// var colorPicker = function(number){
-//       // scale of 4 - 2010
-//       if(number>400){
-//             return "hsl(24,39%,12%)"
-//       }
-//       else{
-//             var lightness = (-0.2)*number+62
-//             return "hsl(24,39%," + lightness + "%)"
-//       }
-//       // var lightness = (27/1003)*number+8
-// }
-
 var colorPicker = function(number){
       if(number<20){
             return "hsl(24,39%,85%)"
