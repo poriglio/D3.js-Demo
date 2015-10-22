@@ -16,8 +16,8 @@ app.get("/paula",function(request,response){
 	response.sendFile("/html/paula.html",{root:"./public"})
 })
 
-app.get("/joannie",function(request,response){
-	response.sendFile("/html/joannie.html",{root:"./public"})
+app.get("/joanie",function(request,response){
+	response.sendFile("/html/joanie.html",{root:"./public"})
 })
 
 app.get("/josh",function(request,response){

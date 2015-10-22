@@ -1,5 +1,5 @@
 body{
-	background-color: lemonchiffon;
+	background-color: #ffffff;
 }
 
 ul{
@@ -12,4 +12,45 @@ li{
 
 a{
 	text-decoration: none;
+}
+
+
+/*=========Joanie Styly===========*/
+
+/*.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: pink;
+  stroke: #783718;
+  stroke-width: 1.5px;
+}*/
+
+.node text {
+  font: 10px sans-serif;
+}
+
+/*.link {
+  fill: none;
+  stroke: #EB5821;
+  stroke-width: 1.5px;
+}*/
+
+.node circle {
+  cursor: pointer;
+  fill: #fff;
+  stroke: black;
+  stroke-width: 1.5px;
+}
+
+path.link {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 1.5px;
+}
+    
+      
+.node.selected circle {
+  fill: green;
 }
