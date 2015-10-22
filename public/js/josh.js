@@ -1,6 +1,6 @@
 console.log("hello")
 
-var margin = {top: 40, right: 40, bottom: 40, left: 60},  //setting total margins
+var margin = {top: 40, right: 40, bottom: 50, left: 60},  //setting total margins
     width = 1500 - margin.left - margin.right,  //setting width of total graph
     height = 800 - margin.top - margin.bottom;  //setting heigh of total graph
 
@@ -91,7 +91,7 @@ d3.csv("./js/joshData.csv", function(error, data) { //pulling in the csv data an
 
   legend.append("rect")      
       .attr("x", width - 18)
-      .attr("width", 18)
+      .attr("width", 18   )
       .attr("height", 18)
       .style("fill", color);  //adding the legend rects in the top right corner
 
