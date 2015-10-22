@@ -9,5 +9,8 @@
 	        // popupTemplate: function(geography,states){
 	        // 	return "<div class='hoverinfo'>" + geography.properties.name + "<strong>Number of Coffee Shops: </strong><br>" + states.stores
         	// },
+        	popupTemplate: function(geography,states){
+        		return "<div class='hoverinfo'><h3><b>" + geography.properties.name + "<br>" 
+        	}
         }
     });
