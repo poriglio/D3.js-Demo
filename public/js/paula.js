@@ -6,8 +6,8 @@
         },
         data: states,
         geographyConfig : {
-	        popupTemplate: function(geography,states){
-	        	return "<div class='hoverinfo'>" + geography.properties.name + "Number of Coffee Shops: " + states.stores
-        },
+	        // popupTemplate: function(geography,states){
+	        // 	return "<div class='hoverinfo'>" + geography.properties.name + "<strong>Number of Coffee Shops: </strong><br>" + states.stores
+        	// },
         }
     });
