@@ -2,31 +2,97 @@
 <html ng-app="demoApp">
 	<head>
 		<meta charset="utf-8">
-		<title>D3.js Demo</title>
+		<title>Non-Contiguous Cartogram</title>
 		<link href="/styles/styles.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-chart.js/0.8.5/angular-chart.min.js"></script>
-
-		<!-- Angular Material Dependencies -->
-		    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
-		    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
-
-		    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
-		    <script type="text/javascript" src="/js/angular-drag-and-drop-lists.js"></script>
-		    
 	</head>
+	<!-- Danielle's Style Code -->
+	
+  <style>
+
+.land {
+  fill: #fff;
+  stroke: #ccc;
+}
+
+.state {
+  fill: #ccc;
+  stroke: #666;
+}
+
+</style>
 	<body>	
 
-<!-- THE BELOW NG-VIEW WILL SHOW THE HEADING AND THE NAV BAR!!! -->
+<!-- Paula's code - THE BELOW NG-VIEW WILL SHOW THE HEADING AND THE NAV BAR!!! -->
 
 		<div ng-view>
 		</div>
 
-		<h2>Danielle's Chart</h2>
-		
 
+		<!-- Danielle's Code Pasted -->
+
+<h1>Ratio of Revenue to Federal Spending by State, 2014</h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+<script>
+
+// Ratio of Obese (BMI >= 30) in U.S. Adults, CDC 2008
+// var valueById = [
+//    NaN, .187, .198,  NaN, .133, .175, .151,  NaN, .100, .125,
+//   .171,  NaN, .172, .133,  NaN, .108, .142, .167, .201, .175,
+//   .159, .169, .177, .141, .163, .117, .182, .153, .195, .189,
+//   .134, .163, .133, .151, .145, .130, .139, .169, .164, .175,
+//   .135, .152, .169,  NaN, .132, .167, .139, .184, .159, .140,
+//   .146, .157,  NaN, .139, .183, .160, .143
+// ];
+
+//  Ratio of federal spending to revenue ration, 2014
+var valueById = [
+   NaN, 2.6, 1.38, NaN, 1.45, .67, .67, NaN, .69, 1.13, .32, 1, .97, .7, NaN,
+   1.39, 1.18, .47, 1.95, .87, .57, 2.37, .68, 1.53, 1.05, 
+   .68, .97, .62, 1.99, .72, 1.36, .47, .88, .77, .42,
+   2.42, .58, .83, 7.51, .57, .78, 1, 1.44, NaN, .6, 3.29,
+   .9, 1.28, .56, .73, 1.08, 1.23, NaN, .76, 2.12, 1.59, .73
+   ];
+
+var path = d3.geo.path();
+
+var svg = d3.select("body").append("svg")
+    .attr("width", 960)
+    .attr("height", 500);
+
+d3.json('/html/us.json', function(error, us) {
+  if (error) throw error;
+
+  svg.append("path")
+      .datum(topojson.feature(us, us.objects.land))
+      .attr("class", "land")
+      .attr("d", path);
+
+  svg.selectAll(".state")
+      .data(topojson.feature(us, us.objects.states).features)
+    .enter().append("path")
+      .attr("class", "state")
+      .attr("d", path)
+      .attr("transform", function(d) {
+        var centroid = path.centroid(d),
+            x = centroid[0],
+            y = centroid[1];
+        return "translate(" + x + "," + y + ")"
+            // + "scale(" + 1/valueById[d.id]  + ")"
+            + "scale(" + Math.sqrt(valueById[d.id] * .6) + ")"
+            + "translate(" + -x + "," + -y + ")";
+      })
+      .style("stroke-width", function(d) {
+        return 1/ Math.sqrt(valueById[d.id] * 5 || 1);
+      });
+});
+
+</script>
+
+
+<!-- End Danielle's code -->
 
 		<script src="/js/angular-route.js"></script>
 	</body>
