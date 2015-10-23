@@ -10,6 +10,7 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "body-parser": "^1.14.1",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "angular-chart.js": "~0.8.5"
   }
 }

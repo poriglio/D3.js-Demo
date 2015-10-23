@@ -3,19 +3,40 @@
 	<head>
 		<meta charset="utf-8">
 		<title>D3.js Demo</title>
+		
+		<meta name="viewport" content="initial-scale=1"/>
+		
 		<link href="/styles/styles.css" rel="stylesheet">
 		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+		<!-- Angular Material -->
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+	    
+
+		
+		<!-- Angular ChartJS -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-chart.js/0.8.5/angular-chart.min.js"></script>
+
+		  <!-- Angular Material Dependencies -->
+		    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+		    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
+		    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js"></script>
 	</head>
 	<body>	
 
 <!-- THE BELOW NG-VIEW WILL SHOW THE HEADING AND THE NAV BAR!!! -->
 		<div class="container">
-			<div ng-view>
-			</div>
+			<div ng-view></div>
 
 			<p>Welcome to our D3.js demo! Each of us has prepared a different type of chart to demonstrate the capabilities of the D3 framework.</p>
+		
+
+
 			<script src="/js/angular-route.js"></script>
 		</div>
 	</body>

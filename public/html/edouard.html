@@ -3,19 +3,97 @@
 	<head>
 		<meta charset="utf-8">
 		<title>D3.js Demo</title>
+
+		<!-- Angular Material -->
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+    	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+   		 <meta name="viewport" content="initial-scale=1" />
+		
+   		 <!-- styles.css is for the common Nav Bar, ed.css is for the rest -->
 		<link href="/styles/styles.css" rel="stylesheet">
+		<link href="/styles/ed.css" rel="stylesheet">
+
+
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-chart.js/0.8.5/angular-chart.min.js"></script>
+
+		  <!-- Angular Material Dependencies -->
+		    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+		    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
+
+		    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
+
 	</head>
-	<body>	
+	<body layout="column" ng-controller="demoController">	
 
 <!-- THE BELOW NG-VIEW WILL SHOW THE HEADING AND THE NAV BAR!!! -->
 
-		<div ng-view>
+	
+		<div ng-view></div>
+		<h2>{{greeting}}</h2>
+		
+		<div layout="column">
+				<div layout="row">
+						<div flex="50">
+						
+								<canvas id="doughnut" class="chart chart-doughnut"
+						 			 chart-data="data" chart-labels="labels">
+								</canvas> 
+			  	
+						</div>
+				
+						<div flex="50">
+								<canvas id="pie" class="chart chart-pie"
+								  chart-data="data" chart-labels="labels">
+								</canvas> 
+						</div>	
+
+				</div>
+
+				<div layout="column" layout-align="center">
+
+						<div layout="row" layout-align="center">
+						<div layout="row" flex="80">
+							      <div flex="10" layout layout-align="center center">
+							        <span class="md-body-1">Blue</span>
+							      </div>
+							      
+							      <md-slider flex="70" min="0" max="255" ng-model="data[0]" class="md-primary">
+							      </md-slider>
+							      
+							      <div flex="20" layout layout-align="center center">
+							        <input flex type="number" ng-model="data[0]" aria-label="red" aria-controls="red-slider">
+							      </div>
+						</div>
+						</div>
+						
+						<div layout="row" layout-align="center">
+						<div layout="row" flex="80">
+							      <div flex="10" layout layout-align="center center">
+							        <span class="md-body-1">Red</span>
+							      </div>
+							      
+							      <md-slider flex="70" min="0" max="255" ng-model="data[2]" class="md-secondary">
+							      </md-slider>
+							      
+							      <div flex="20" layout layout-align="center center">
+							        <input flex type="number" ng-model="data[2]" aria-label="red" aria-controls="red-slider">
+							      </div>
+						</div>
+						</div>
+
+
+				</div>
 		</div>
 
-		<h2>Edouard's Chart</h2>
-
+		
+		
 		<script src="/js/angular-route.js"></script>
 	</body>
 </html>
+
+
